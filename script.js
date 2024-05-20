@@ -25,7 +25,7 @@ divCards[0].remove();
 
 searchInput.addEventListener("input", e => {
 
-    const value = e.target.value;
+    const value = e.target.value.toLowerCase();
     divCards.forEach(
         card => {
             let isVisable = card.id.startsWith(value);
