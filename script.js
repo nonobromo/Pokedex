@@ -14,6 +14,27 @@ typeSelect.addEventListener('input', async function () {
 
 let pokeurl;
 
+
+const searchInput = document.querySelector("#input-search");
+
+
+
+
+const divCards = document.querySelector('#pokeCards').childNodes;
+divCards[0].remove();
+
+searchInput.addEventListener("input", e => {
+
+    const value = e.target.value;
+    divCards.forEach(
+        card => {
+            let isVisable = card.id.startsWith(value);
+            card.classList.toggle("hide", !isVisable)
+
+        }
+    );
+})
+
 async function showPokemon() {
     const poketype = document.querySelector('#poke-type').value;
     try {
@@ -28,7 +49,9 @@ async function showPokemon() {
 
         const allPokemons = data.pokemon;
 
+
         const pokeList = document.querySelector('.container');
+
 
         for (let i = 0; i < allPokemons.length; i++) {
             const name = data.pokemon[i].pokemon.name;
@@ -44,6 +67,7 @@ async function showPokemon() {
 
             const div = document.createElement("div");
             div.classList.add("card")
+            div.setAttribute('id', name);
             pokeList.appendChild(div);
 
             const h2 = document.createElement("h2");
@@ -52,9 +76,14 @@ async function showPokemon() {
             img.src = imgUrl;
             div.appendChild(h2);
             div.appendChild(img);
-
-
         }
+        for (let i = 0; i < allPokemons.length; i++) {
+            const divCards = document.querySelectorAll(".card");
+            pokeDivs = allPokemons.map(pokemon => {
+                return { name: pokemon.pokemon.name, divCard: divCards[i] };
+            })
+        }
+
     } catch (error) {
         console.log(error);
     }
@@ -126,8 +155,6 @@ function createCard(pokemon) {
         span.innerHTML = pokemon.abilities[j].ability.name;
         pokeAbilities.appendChild(span);
     }
-
-    console.log(pokemon);
 
     removeCard(numbOfTypes);
 }

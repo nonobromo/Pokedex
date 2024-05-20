@@ -25,7 +25,7 @@ body {
 
 .select-area {
     width: 100vw;
-    height: 150px;
+    height: 160px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -69,6 +69,15 @@ body {
     color: white;
 }
 
+.select-area>input {
+    background-color: rgb(107, 167, 224);
+    height: 30px;
+    border-radius: 6px;
+}
+
+::placeholder {
+    color: white;
+}
 
 
 .container {
@@ -172,6 +181,11 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+}
+
+.hide {
+    display: none;
+    background-color: red;
 }
 
 @media screen and (min-width:280px) and (max-width:1300px) {
