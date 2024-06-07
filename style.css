@@ -6,8 +6,6 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     font-family: "Reddit Mono",
         monospace;
@@ -79,7 +77,6 @@ body {
     color: white;
 }
 
-
 .container {
     width: 600px;
     min-height: 600px;
@@ -91,7 +88,24 @@ body {
     margin-top: 180px;
 }
 
-.card {
+.card-container {
+    width: 180px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container>i {
+    width: 180px;
+    height: 32px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.cardPoke {
     width: 180px;
     height: 180px;
     border: 3px solid #000;
@@ -105,21 +119,16 @@ body {
     box-shadow: 3px 3px 1px black;
 }
 
-.card>h2 {
+.cardPoke>h2 {
     font-size: 1em;
     text-align: center;
 }
 
-.card>:hover h2 {
-    text-decoration: underline;
-}
-
-.card:hover {
+.cardPoke:hover {
     transition: 200ms ease-in-out;
     transform: translateY(-10px);
     box-shadow: 4px 4px 1px .5em black;
 }
-
 
 .loaderFrame {
     position: fixed;
@@ -143,11 +152,27 @@ body {
     background-attachment: fixed;
     color: black;
     border: 5px solid black;
+    position: relative;
+}
+
+
+.cardPick>button {
+    position: absolute;
+    right: -35px;
+    top: -40px;
+}
+
+.cardPick>button>.exit {
+    width: 32px;
 }
 
 .cardpart {
     width: 180px;
     height: 190px;
+}
+
+.cardpart>.basic-info {
+    font-size: 1.5em;
 }
 
 .cardpart:nth-child(1) {
@@ -185,7 +210,6 @@ body {
 
 .hide {
     display: none;
-    background-color: red;
 }
 
 @media screen and (min-width:280px) and (max-width:1300px) {

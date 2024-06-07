@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 
-
 <body>
 
     <div class="select-area">
+
         <h1 for="">Choose A Pokemon Type <img src="pokemonIMG/pokeball.png" alt="pokeball"></h1>
         <div class="select-opt">
             <select name="" id="poke-type">
@@ -37,10 +37,9 @@
             <img alt="pokeType" id="poke-img">
         </div>
         <input type="text" id="input-search" placeholder="Search for a pokemon">
+        <div class="show-saved">
+        </div>
     </div>
-
-
-
 
     <div class="container" id="pokeCards">
 
@@ -52,9 +51,9 @@
                 <img src="" alt="" id="cardpic">
             </div>
             <div class="cardpart">
-                <h2 id="pokename"></h2>
-                <h2 id="pokeweight"></h2>
-                <h2 id="pokeheight"></h2>
+                <h2 class="basic-info" id="pokename"></h2>
+                <h2 class="basic-info" id="pokeweight"></h2>
+                <h2 class="basic-info" id="pokeheight"></h2>
             </div>
             <div class="cardpart">
                 <h2>Types:</h2>
@@ -62,6 +61,7 @@
             <div class="cardpart">
                 <h2>Abilities:</h2>
             </div>
+            <button id="exit-btn"><img src="/reject.png" alt="exit" class="exit"></button>
         </div>
     </div>
     <script src="pokeType.js"></script>
