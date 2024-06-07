@@ -1,6 +1,6 @@
 const typeSelect = document.querySelector('#poke-type');
 let savedPokemonsArray = localStorage.getItem("saved") ? localStorage.getItem("saved").split(",") : [];
-
+const selectArea = document.querySelector(".select-area");
 typeSelect.addEventListener('input', async function () {
     showPokemon();
     fetchPokemon();
@@ -109,6 +109,7 @@ function fetchPokemon() {
 
 function createCard(pokemon) {
     document.querySelector(".loaderFrame").style.display = "grid";
+    selectArea.style.display = "none"
 
     //Show Pokemon Pic
     const cardPic = document.getElementById("cardpic");
@@ -153,7 +154,7 @@ function removeCard(types) {
 
     exitBtn.addEventListener("click", () => {
         document.querySelector(".loaderFrame").style.display = "none";
-
+        selectArea.style.display = "flex"
         //Remove Pokemon created type elements
         const numsOfh3 = this.document.querySelectorAll("h3");
 
